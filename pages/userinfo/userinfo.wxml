@@ -1,0 +1,11 @@
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{0==whatPrint}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击授权小程序</button>
+    <block wx:elif="{{1==whatPrint}}">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" />
+      <view class="userinfo-nickname"><text>{{userInfo.nickName}}</text></view>
+    </block>
+    <text wx:else>错误！</text>
+  </view>
+</view>

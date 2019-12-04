@@ -1,0 +1,8 @@
+<text class="outerstyle">自定义组件-样式被调用者影响\n</text>
+
+<!-- 
+  options: {
+    styleIsolation: "isolated"
+    styleIsolation: "shared"
+  }
+ -->

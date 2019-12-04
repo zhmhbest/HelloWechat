@@ -1,0 +1,30 @@
+
+<test-com></test-com>
+<test-com/>
+
+
+<!-- 全局组件 -->
+<publictest-com/>
+
+
+<!-- 外部style -->
+<text class="outerstyle">这是一个普通的text标签\n</text>
+<test-com-style/>
+
+
+<!-- 传入属性/单插槽 -->
+<test-com-interactive title="传入标题1" id="id_forcounter1" >传入内容</test-com-interactive>
+<test-com-interactive title="传入标题2" color="#808000" id="id_forcounter2"/>
+<button size="mini" bind:tap="onButtonClick" type="warn">点击修改组件内计数器</button>
+<text>\n</text>
+
+
+<!-- 传出事件 -->
+<test-com-event bind:outerevent="onOuterEvent" />
+
+<!-- 多插槽使用 -->
+<test-com-slot>
+  <button size="mini" slot="s1" type="primary">插入的按钮1</button>
+  <button size="mini" slot="s2" type="primary">插入的按钮2</button>
+  <button size="mini" slot="s3" type="primary">插入的按钮3</button>
+</test-com-slot>

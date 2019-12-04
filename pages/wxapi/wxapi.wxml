@@ -1,0 +1,25 @@
+
+
+<button type="warn" bind:tap="onButtonRequest">获取网页</button>
+
+<view style="display: flex; background-color: #E0FFFF;"><!-- 使用flex布局 -->
+  <!-- 预定义图标 -->
+  <button 
+    bind:tap="onButtonArray1" data-index="{{index}}" data-item="{{item}}"
+    size="mini" style="flex: 1; text-align: center" 
+    wx:for="{{['success', 'loading', 'none']}}" wx:key="{{item}}">吐司{{index}}</button>
+  <!-- 自定义图标 -->
+  <button 
+    bind:tap="onButtonArray2" data-index="{{index}}" data-item="{{item}}"
+    type="primary" size="mini" style="flex: 1; text-align: center" 
+    wx:for="{{['/assets/bar/home_64px.png ', '/assets/bar/aperture_64px.png']}}" wx:key="{{item}}">吐司{{index}}</button>
+</view>
+
+
+<button type="warn" bind:tap="onButtonMoudle">交互弹窗</button>
+
+<button type="default" bind:tap="onButtonLoading">无限加载</button>
+
+<button type="primary" open-type="share">分享按钮（不需要绑定事件）</button>
+
+<button type="default" bind:tap="onButtonList">按钮列表</button>

@@ -1,0 +1,6 @@
+<!--components/interactive/interactive.wxml-->
+<view style="background-color: {{color}}">
+  【{{title}}】计数器{{counter}}；
+  <!-- 单插槽的使用 -->
+  <slot/>
+</view>

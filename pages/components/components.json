@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+      "test-com": "/components/first/first",
+      "test-com-style": "/components/style/style",
+      "test-com-interactive": "/components/interactive/interactive",
+      "test-com-event": "/components/event/event",
+      "test-com-slot": "/components/slot/slot"
+      
+  },
+  "navigationBarTitleText": "使用自定义组件"
+}

@@ -1,0 +1,45 @@
+
+<!-- 代码复用方式1 -->
+<block wx:for="{{3}}" wx:key="{{item}}">
+  <text>{{index}}:{{item}}\n</text>
+</block>
+<block wx:for="{{['a', 'b', 'c']}}" wx:for-index="i" wx:for-item="c" wx:key="{{c}}">
+  <text>{{i}}:{{c}}\n</text>
+</block>
+
+<!-- 代码复用方式2 -->
+<template name="tple_1">
+  <button size="mini">{{but_name}}</button>
+  <text>{{txt_name}}\n</text>
+</template>
+<template is="tple_1" data="{{but_name: '按钮名称1', txt_name: '文本名称1'}}" />
+<template is="tple_1" data="{{but_name: '按钮名称2', txt_name: '文本名称2'}}" />
+
+<!-- 代码复用方式3 -->
+<import src="./template1.wxml"/>
+<template is="tple_2" data="{{but_name: '按钮名称3', txt_name: '文本名称3'}}" />
+<template is="tple_2" data="{{but_name: '按钮名称4', txt_name: '文本名称4'}}" />
+
+<!-- 代码复用方式4 -->
+<!-- 
+  include 是最终生成的结果
+ -->
+<include src="./template2.wxml"/>
+
+<!-- WXS 方法1 -->
+<wxs module="modname1">
+  var wxstest_msg = "wxs内变量";
+  var wxstest_sum = function(n1, n2) {
+    return n1 + n2;
+  }
+  //导出使可用
+  module.exports = {
+    outer_msg: wxstest_msg,
+    outer_sum: wxstest_sum
+  }
+</wxs>
+<text>{{modname1.outer_msg}}：{{modname1.outer_sum(3, 2)}}\n</text>
+
+<!-- WXS 方法2 -->
+<wxs module="modname2" src="./testwxs.wxs" />
+<text>{{modname2.outer_msg}}：{{modname2.outer_mul(4, 3)}}</text>

@@ -1,0 +1,5 @@
+/* pages/wx_mlss/wx_mlss.wxss */
+
+text {
+  background-color: #FAF0E6
+}

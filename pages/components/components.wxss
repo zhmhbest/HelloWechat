@@ -1,0 +1,4 @@
+/* pages/components/components.wxss */
+.outerstyle {
+  background-color: #5F9EA0
+}

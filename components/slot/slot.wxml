@@ -1,0 +1,8 @@
+
+
+<view style="display: flex; background-color: #E0FFFF;"><!-- 使用flex布局 -->
+<!-- 多插槽使用 -->
+  <slot name="s1"/>
+  <slot name="s2"/>
+  <slot name="s3"/>
+</view>

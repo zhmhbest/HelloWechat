@@ -1,0 +1,70 @@
+
+
+<!-- tap事件 -->
+<button size="mini" catch:tap="onButtonClick_catch">
+  tap: catch
+</button>
+<button size="mini" bind:tap="onButtonClick_bind">
+  tap: bind
+</button>
+<button size="mini" bind:tap="onButtonClick_quick" bind:longpress="onButtonClick_long">
+  tap: quick long
+</button>
+
+
+<!-- touch事件 -->
+<button type="primary"
+  bind:touchstart="onTouchStart"
+  bind:touchmove="onMove"
+  bind:touchend="onTouchEnd"
+>
+  touch: start move end
+</button>
+
+
+<!-- event分析 -->
+<view bind:touchstart="onButton_event2" style="height:230rpx; background-color: #000;">
+  <text>\n</text>
+  <button type="warn" bind:touchstart="onButton_event1">事件分析</button>
+</view>
+
+
+<!-- 事件组 -->
+<view style="display: flex; background-color: #E0FFFF;"><!-- 使用flex布局 -->
+  <button 
+    bind:tap="onButtonArray" data-index="{{index}}" data-item="{{item}}"
+    size="mini" style="flex: 1; text-align: center" 
+    wx:for="{{['head', 'body', 'tail']}}" wx:key="{{item}}">{{item}}</button>
+</view>
+
+
+<!-- 事件冒泡及捕获 -->
+<!-- capture-bind:tap 会向父组建传递事件 -->
+<!-- capture-catch:tap 会阻断事件继续传递 -->
+<button bind:tap="setCaptureMode">{{capture_mode? '捕获模式' : '传递模式'}}</button>
+<view 
+  capture-bind:tap="onCapture" bind:tap="onTap" data-item="外" 
+  style="background-color: 	#00BFFF; width: 600rpx; height: 600rpx">
+  
+  <view wx:if="{{capture_mode}}"
+    capture-bind:tap="onCapture" catch:tap="onTap" data-item="中" 
+    style="background-color: #5F9EA0; width: 400rpx; height: 400rpx">
+    <view 
+      capture-bind:tap="onCapture" bind:tap="onTap" data-item="内" 
+      style="background-color: #DCDCDC; width: 200rpx; height: 200rpx">
+      <text>点击此处</text>
+    </view>
+    <text>事件在此层被捕获</text>
+  </view>
+
+  <view wx:else
+    capture-bind:tap="onCapture" bind:tap="onTap" data-item="中" 
+    style="background-color: #5F9EA0; width: 400rpx; height: 400rpx">
+    <view 
+      capture-bind:tap="onCapture" bind:tap="onTap" data-item="内" 
+      style="background-color: #DCDCDC; width: 200rpx; height: 200rpx">
+      <text>点击此处</text>
+    </view>
+  </view>
+
+</view>

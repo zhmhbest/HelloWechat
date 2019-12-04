@@ -1,0 +1,9 @@
+var wxstest_msg = "wxs内变量 外部导入方式";
+var wxstest_mul = function (n1, n2) {
+  return n1 * n2;
+}
+//导出使可用
+module.exports = {
+  outer_msg: wxstest_msg,
+  outer_mul: wxstest_mul
+}

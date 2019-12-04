@@ -1,0 +1,45 @@
+/* pages/assembly/assembly.wxss */
+
+.test_button {
+  background-color: #E9967A;
+}
+
+.test_button_hover {
+  background-color: #000000;
+}
+
+.test_view {
+  background-color: #2F4F4F;
+}
+
+.test_text {
+  background-color: #A9A9A9;
+}
+
+.test_icon {
+  background-color: #000000;
+}
+
+.test_progress {
+  background-color: #6495ED;
+}
+
+.test_slider {
+  background-color: #7FFF00
+}
+
+.test_image {
+  background-color: #FF69B4;
+}
+
+.test_audio {
+  background-color: #ADFF2F;
+}
+
+.test_scroll {
+  background-color: #48D1CC;
+}
+
+.test_input {
+  background-color: #DDA0DD;
+}

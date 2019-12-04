@@ -1,0 +1,6 @@
+<template name="tple_3">
+  <button type="primary" size="mini">{{but_name}}</button>
+  <text>{{txt_name}}\n</text>
+</template>
+<template is="tple_3" data="{{but_name: '按钮名称5', txt_name: '文本名称5'}}" />
+<template is="tple_3" data="{{but_name: '按钮名称6', txt_name: '文本名称6'}}" />

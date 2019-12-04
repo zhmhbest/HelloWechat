@@ -1,0 +1,147 @@
+<!-- button -->
+<view class="test_button">
+  <text>几种系统类型按钮\n</text>
+  <button type="default" size="mini">default</button>
+  <button type="primary" size="mini">primary</button>
+  <button type="warn" size="mini">warn</button>
+  <button size="mini" plain>plain</button>
+  <button size="mini" loading>loading</button>
+  <button size="mini" disabled>disabled</button>
+  <text>\n自定义点击时样式
+hover-class: 点击时使用的样式
+hover-start-time: 点击后样式改变延迟时间
+hover-stay-time: 松开后样式保留时间
+hover-stop-propagation: 是否阻止向上传递hover
+</text>
+  <view hover-class="test_button_hover" >
+    <button 
+    hover-class="test_button_hover" 
+    hover-start-time="{{200}}"
+    hover-stay-time="{{300}}" 
+    hover-stop-propagation="{{false}}"
+    size="mini" bind:tap="onButtonClick">点击变色</button>
+  </view>
+</view>
+
+<!-- text -->
+<view class="test_text">
+  <text>当前日期：{{mustachetest_nowtime}}\n</text>
+  <text>《text》不使用转义：[&nbsp;] [&lt;] [&gt;] [&amp;] [&apos;] [&ensp;] [&emsp;]\n</text>
+  <text decode>《text》使用转义：[&nbsp;] [&lt;] [&gt;] [&amp;] [&apos;] [&ensp;] [&emsp;]\n</text>
+  <text space="nbsp">《text》设置空格类型：[ ]一个英文长度\n</text>
+  <text space="ensp">《text》设置空格类型：[ ]半个中文长度\n</text>
+  <text space="emsp">《text》设置空格类型：[ ]一个中文长度\n</text>
+  <text selectable>《text》该文本可以被选中\n</text>
+</view>
+
+<!-- icon -->
+<view class="test_icon">
+  <block wx:for="{{[20, 30, 40, 50, 60, 70]}}" wx:key="{{item}}">
+    <icon type="success" size="{{item}}"/>
+  </block><text>\n</text>
+
+  <block wx:for="{{['red', 'orange', 'yellow', 'green', 'rgb(0,255,255)', 'blue', 'purple']}}" wx:key="{{item}}">
+    <icon type="success" size="30" color="{{item}}"/>
+  </block><text>\n</text>
+
+  <block wx:for="{{['success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear']}}" wx:key="{{item}}">
+    <icon type="{{item}}" size="30"/>
+  </block><text>\n</text>
+</view>
+
+<!-- progress -->
+<view class="test_progress">
+<text>显示百分比</text>
+<progress percent="20" show-info />
+<text>进度条宽度</text>
+<progress percent="40" stroke-width="12" />
+<text>进度条颜色</text>
+<progress percent="60" color="pink" />
+<text>动态进度条</text>
+<progress percent="80" active />
+<text>\n</text>
+</view>
+
+<!-- slider -->
+<view class="test_slider">
+  <text>步长5</text>
+  <slider bindchange="" step="5" show-value/>
+  <text>不显示值</text>
+  <slider bindchange=""/>
+  <text>限制极限</text>
+  <slider bindchange="" min="50" max="200" show-value/>
+</view>
+
+<!-- image -->
+<!-- 
+  scaleToFill	  不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素	
+  aspectFit	    保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。	
+  aspectFill	  保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。	
+  widthFix	    宽度不变，高度自动变化，保持原图宽高比不变	
+  top	
+  bottom
+  center
+  left
+  right
+  top left
+  top right
+  bottom left
+  bottom right
+-->
+<view class="test_image">
+  <block wx:for="{{['scaleToFill', 'aspectFit', 'aspectFill', 'widthFix']}}" wx:key="{{item}}" >
+    <text>{{item}}\n</text>
+    <image 
+      mode="{{item}}"
+      style="width: 300px; height: 300px; background-color: #eeeeee;" 
+      src="/assets/img/测试图像.jpg " />
+  </block>
+</view>
+
+<!-- audio  -->
+<view class="test_audio">
+  <!-- <audio 
+    name="烟花易冷" 
+    poster="/assets/music/烟花易冷.jpg" 
+    author="周杰伦" 
+    src="/assets/music/烟花易冷.wav" id="myAudio" controls loop />
+  -->
+  <button type="primary" size="mini" bindtap="audiotest_Setting">设置</button>
+  <button type="primary" size="mini" bindtap="audiotest_Play">播放</button>
+  <button type="primary" size="mini" bindtap="audiotest_Pause">暂停</button>
+  <button type="primary" size="mini" bindtap="audiotest_Stop">停止</button>
+  <button type="default" size="mini" bindtap="audiotest_Position">设置当前播放时间为5秒</button>
+  <button type="primary" size="mini" bindtap="audiotest_Start">回到开头</button>
+</view>
+
+<!-- scroll-view -->
+<view class="test_scroll">
+  <text>横向滑动\n</text>
+  <scroll-view style="white-space: nowrap; background: #7B68EE; height: 240rpx;" scroll-x>
+    <view 
+      style="display: inline-block; margin: 20rpx; background: #FFE4E1; width: 200rpx; height: 200rpx;"
+      wx:for="{{10}}" wx:key="{{item}}">{{item}}</view>
+  </scroll-view>
+  <text>纵向滑动\n</text>
+  <scroll-view style="background: #7B68EE; width: 240rpx; height: 500rpx;" scroll-y>
+    <view 
+          style="margin: 20rpx; background: #FFE4E1; width: 200rpx; height: 200rpx;"
+          wx:for="{{10}}" wx:key="{{item}}">{{item}}</view>
+  </scroll-view>
+  <text>\n</text>
+</view>
+
+<!-- navigator -->
+<navigator url="/pages/userinfo/userinfo">查看用户信息</navigator>
+
+<!-- input -->
+<view class="test_input">
+  <input type="text" placeholder="这是提示内容" auto-focus/>
+  <input type="text" placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" />
+  <input maxlength="3" placeholder="最大输入长度3" />
+  <input bindinput="bindKeyInput" placeholder="加密及输入捕获" value="123" password />
+  <input type="idcard" placeholder="身份证输入键盘" />
+  <input type="digit" placeholder="带小数点的数字键盘"/>
+  <input placeholder-style="color:#00FFFF" placeholder="占位符字体变色" />
+</view>
+

@@ -1,0 +1,40 @@
+{
+  
+  "pages": [
+    "pages/home/home",
+    "pages/components/components",
+    "pages/wxapi/wxapi",
+    "pages/wx_mlss/wx_mlss",
+    "pages/event/event",
+    "pages/userinfo/userinfo",
+    "pages/assembly/assembly"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FF69B4",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "欢迎来到小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "Home",
+        "iconPath": "/assets/bar/home_64px.png",
+        "selectedIconPath": "/assets/bar/home_64px_selected.png"
+      },
+      {
+        "pagePath": "pages/assembly/assembly",
+        "text": "Assembly",
+        "iconPath": "/assets/bar/aperture_64px.png",
+        "selectedIconPath": "/assets/bar/aperture_64px_selected.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "publictest-com": "/components/public/public"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,2 @@
+<button size="mini" bind:tap="onButtonClick_inner">组件内部事件</button>
+<button size="mini" bind:tap="onButtonClick_outer">组件外部事件</button>

@@ -1,0 +1,5 @@
+<button bind:tap="onButtonClick_userinfo">UserInfo</button>
+<button bind:tap="onButtonClick_mlss">WXML & WXS</button>
+<button bind:tap="onButtonClick_event">Event</button>
+<button bind:tap="onButtonClick_wxapi">WX API</button>
+<button bind:tap="onButtonClick_com">Components</button>

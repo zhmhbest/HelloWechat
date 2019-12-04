@@ -1,0 +1,4 @@
+<template name="tple_2">
+  <button type="warn" size="mini">{{but_name}}</button>
+  <text>{{txt_name}}\n</text>
+</template>
